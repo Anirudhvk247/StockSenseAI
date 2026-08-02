@@ -695,5 +695,6 @@ def not_found(_error):
     return render_template("error.html", message="The page you requested could not be found."), 404
 
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=False)
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5050))
+    app.run(host='0.0.0.0', port=port, debug=True)
